@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container" style="margin: 40px auto; width: 50%;">
+            <div class="card">
+                <h5 class="card-header"><%= foundProduct.name%></h5>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/products?catagory=<%= foundProduct.catagory%>"><%= foundProduct.catagory%></a></h5>
+                  <p class="card-text">Price for this product is $<%= foundProduct.price%></p>
+                  <a href="/products/<%= foundProduct._id%>/edit" class="btn btn-warning">Edit</a>
+                  <form method="POST" action="/products/<%= foundProduct._id%>?_method=DELETE" style="display: inline-block;">
+                    <button class="btn btn-danger">Delete</button>
+                  </form>
+                  <a href="/products" class="btn btn-info" style="display: inline-block;">Go back</a>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
